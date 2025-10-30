@@ -1,89 +1,170 @@
 
-body{
-    text-align: center;
-   background-image:url("grey.jpg") ;
-   background-size: cover;
-}
-#heading{
-    color:rgb(195, 51, 51);
-    font-size: 60px;
-    text-align: center;
-    margin-top: 5% ;
-}
-.stopwatch{
-    height:45%;
-    width: 35%;
-    text-align: center;
-    margin-top: 5%;
-    margin-left: 32%;
-    background-color: rgba(174, 227, 245, 0.79);
-    border: 8px solid rgb(24, 4, 101);
-
-   
-}
-#displayTime{
-    color:rgb(9, 37, 117);
-    font-size: 70px;
-}
-.btn{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 10px;
-}
-.btn1{
-    height: 60px;
-    width: 110px;
-    font-size: 22px;
-    background-color: rgb(176, 12, 53);
-    font-size: 30px;
-    color:white;
-    border-radius: 25% 10%;
-    transition:all 1s;
-}
-.btn2{
-    height: 60px;
-    width: 110px;
-    font-size: 22px;
-    background-color:  rgb(176, 12, 53);
-    font-size: 30px;
-    color:white;
-    border-radius: 25% 10%;
-    transition:all 1s;
-}
-.btn3{
-    height: 60px;
-    width: 110px;
-    font-size: 22px;
-    background-color: rgb(176, 12, 53);
-    font-size: 30px;
-    color:white;
-    border-radius: 25% 10%;
-    transition:all 1s;
-}
-.btn1:hover{
-cursor: pointer;
-transform:scale(1.1);
-background-color: rgb(214, 55, 55);
-
-}
-.btn1:active{
-    background-color:rgb(241, 241, 36);  
-}
-.btn2:hover{
-    cursor: pointer;
-    transform:scale(1.1);
-    background-color: rgb(214, 55, 55);
-}
-.btn2:active{
-    background-color:rgb(254, 254, 52);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-  .btn3:hover{
-        cursor: pointer;
-        transform:scale(1.1);
-        background-color: rgb(214, 55, 55);
-    }
-    .btn3:active{
-        background-color:rgb(244, 244, 55);  
-    }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f4f8; 
+  background-image: url("grey.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+
+#heading {
+  font-size: 56px;
+  color: #1e3a8a; 
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* ⏱️ Stopwatch Container */
+.stopwatch {
+  width: 500px;
+  height:350px;
+  max-width: 90%;
+  padding: 50px 20px;
+  border-radius: 20px;
+background: linear-gradient(135deg, #efd7d9ff, #e8edf4ff);
+
+
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 6px 25px rgba(0, 0, 0, 0.2),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stopwatch:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* 🕰️ Time Display */
+#displayTime {
+  color: #1d4ed8; /* strong blue */
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px rgba(29, 78, 216, 0.3);
+}
+
+/* 🎛️ Buttons Container */
+.btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* 🔘 Base Button Style */
+.btn1,
+.btn2,
+.btn3 {
+  width: 120px;
+  height: 55px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #2563eb; /* primary blue */
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* 🎨 Button Color Variants */
+.btn1 {
+  background-color: #dc2626; /* red */
+}
+.btn2 {
+  background-color: #059669; /* green */
+}
+.btn3 {
+  background-color: #f59e0b; /* yellow */
+  color: #222;
+  font-weight: 700;
+}
+
+/* 💫 Hover Effects */
+.btn1:hover,
+.btn2:hover,
+.btn3:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* ⚡ Active State */
+.btn1:active,
+.btn2:active,
+.btn3:active {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+/* 🌙 Theme Button */
+.theme {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background-color: #1e293b; /* dark navy */
+  color: #f8fafc;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.theme:hover {
+  background-color: #334155;
+  transform: scale(1.08);
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  #heading {
+    font-size: 42px;
+  }
+
+  .stopwatch {
+    width: 90%;
+    padding: 25px 15px;
+  }
+
+  #displayTime {
+    font-size: 52px;
+  }
+
+  .btn1,
+  .btn2,
+  .btn3 {
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .theme {
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
